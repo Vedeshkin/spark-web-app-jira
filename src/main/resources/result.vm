@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Dynamic Table row creation and Deletion - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+	 body{
+  background-image: linear-gradient(#79a06d, #79a06d); 
+}
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table table-bordered table-hover" id="tab_logic">
+				<thead>
+					<tr >
+						<th class="text-center">
+						Issue 
+						</th>
+						<th class="text-center">
+						Comment
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				#foreach($issue in $issueList)
+					<tr>
+						<td class = "text-center">
+						<a href ="$issue.getSelf().toString()">$issue.getKey()</a>
+						</td>
+						<td>
+						<input type="text" name='comment'  placeholder='Comment' class="form-control"/>
+						</td>
+					</tr>
+				#end
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+</script>
+</body>
+</html>
